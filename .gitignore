@@ -1,0 +1,11 @@
+# Temporary files
+*.tmp
+*.temp
+*.log
+~$*
+
+# Operating system files
+Thumbs.db
+.DS_Store
+
+# Git LFS configuration is maintained separately
