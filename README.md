@@ -40,11 +40,7 @@ The preprocessing workflow included:
 - **Tokenization:** Separating campaign descriptions into individual words or tokens.
 - **Lemmatization:** Converting words into their base or dictionary forms.
 
-These steps were intended to standardize campaign descriptions and prepare them for subsequent text classification and sentiment analysis.
-
-**Related folder:** [Sentiment Analysis of the Campaign Description](https://github.com/Inzimam-Ur/SDGs-and-Crowdfunding-Dataset/tree/main/Sentiment%20Analysis%20of%20the%20campaign%20description)
-
-This folder contains the sentiment analysis data and outputs associated with campaign descriptions.
+These steps were intended to standardize campaign descriptions and prepare them for subsequent text classification and analysis.
 
 ## 5. NLP-Based SDG Classification
 
