@@ -2,120 +2,48 @@
 
 ## 1. Overview
 
-This repository contains the research data and supporting materials for the study *The Impact of Sustainable Development Goals on the Success of Online Crowdfunding Campaigns: An Analysis Through Natural Language Processing Techniques*.
+This repository contains data and supporting materials for the study *The Impact of Sustainable Development Goals on the Success of Online Crowdfunding Campaigns: An Analysis Through Natural Language Processing Techniques*. It uses Kickstarter campaign data from 2020–2024.
 
-The study examines the relationship between the Sustainable Development Goals (SDGs) and the success of online crowdfunding campaigns using campaign-level data, natural language processing (NLP), and econometric analysis. The dataset covers Kickstarter campaigns from 2020 to 2024.
+**Data source:** [Web Robots – Kickstarter Datasets](https://webrobots.io/kickstarter-datasets/)
 
-## 2. Data Source
+## 2. Data Collection and Cleaning
 
-The original data were downloaded from [Web Robots – Kickstarter Datasets](https://webrobots.io/kickstarter-datasets/), a provider of datasets collected from Kickstarter projects.
+Monthly campaign files were merged into yearly and consolidated datasets, with duplicate records removed.
 
-For this research, campaign data covering five years, from 2020 through 2024, were collected and processed to construct consolidated datasets suitable for empirical analysis.
+**Folder:** [Overall and Yearly Data After Merging and Cleaning](https://github.com/Inzimam-Ur/SDGs-and-Crowdfunding-Dataset/tree/main/Overall%20and%20Yearly%20Data%20After%20Merging%20and%20Cleaning)
 
-## 3. Data Collection, Merging, and Cleaning
+## 3. Campaign Text Preprocessing
 
-The downloaded data were initially organized into monthly folders, with each folder containing numerous individual Excel files. Depending on the month, approximately 50–200 files were available.
+Campaign descriptions were cleaned and prepared for text analysis using standard preprocessing steps, including tokenization and lemmatization.
 
-The data preparation process involved the following steps:
+## 4. NLP-Based SDG Classification
 
-1. **Monthly consolidation:** Individual files within each monthly folder were merged into a single monthly dataset.
-2. **Yearly consolidation:** The 12 monthly datasets for each year were combined to produce one dataset for each year.
-3. **Duplicate removal:** Duplicate campaign records were identified and removed during data cleaning.
-4. **Five-year consolidation:** The five annual datasets, covering 2020–2024, were combined into a consolidated dataset.
+SDGdetector was used for the main SDG classification, while Text2SDG provided alternative classifications for robustness checks.
 
-The resulting datasets provided the foundation for text preprocessing, SDG classification, variable construction, and econometric analysis.
+**Folder:** [R Packages NLP Results](https://github.com/Inzimam-Ur/SDGs-and-Crowdfunding-Dataset/tree/main/R%20packages%20NLP%20Results)
 
-**Related folder:** [Overall and Yearly Data After Merging and Cleaning](https://github.com/Inzimam-Ur/SDGs-and-Crowdfunding-Dataset/tree/main/Overall%20and%20Yearly%20Data%20After%20Merging%20and%20Cleaning)
+## 5. Final Analysis Datasets
 
-This folder contains the consolidated annual datasets and other merged and cleaned campaign data.
+The campaign data, SDG classifications, outcome variables, and controls were combined to prepare datasets for the main analysis and robustness checks.
 
-## 4. Campaign Description Preprocessing
+**Folder:** [Final Data Used for Regression Models](https://github.com/Inzimam-Ur/SDGs-and-Crowdfunding-Dataset/tree/main/Final%20Data%20Used%20for%20Regression%20Models)
 
-After consolidating the campaign data, campaign descriptions were extracted for NLP-based analysis. The text was cleaned and prepared before being processed by the SDG classification packages.
+## 6. Econometric Analysis
 
-The preprocessing workflow included:
+Regression models examine the relationship between SDG-related campaign content and crowdfunding success, measured by the amount pledged and number of backers.
 
-- **Text cleaning:** Removing unwanted text elements and punctuation.
-- **Stop-word removal:** Removing common words with limited analytical value where appropriate.
-- **Tokenization:** Separating campaign descriptions into individual words or tokens.
-- **Lemmatization:** Converting words into their base or dictionary forms.
+## 7. Regression Results
 
-These steps were intended to standardize campaign descriptions and prepare them for subsequent text classification and analysis.
+The PDF contains regression tables for the main analysis and robustness checks.
 
-## 5. NLP-Based SDG Classification
+**Folder:** [Regression Results](https://github.com/Inzimam-Ur/SDGs-and-Crowdfunding-Dataset/tree/main/Regression%20Results) | [View Regression Results (PDF)](Regression%20Results/Regression%20Results.pdf)
 
-Two NLP-based tools, SDGdetector and Text2SDG, were used to identify campaign descriptions related to the Sustainable Development Goals.
+## 8. Code and Documentation
 
-The outputs from SDGdetector were used to construct the SDG-related explanatory variables for the main regression analysis. Text2SDG generated an alternative set of SDG classifications for robustness checks.
+Supporting documents provide code-related information, variable definitions, and country reference materials.
 
-The classification outputs were retained separately and subsequently integrated with the consolidated campaign data.
+**Folder:** [Codes and Variable Definitions](https://github.com/Inzimam-Ur/SDGs-and-Crowdfunding-Dataset/tree/main/codes%20and%20variables%20decodes)
 
-**Related folder:** [R Packages NLP Results](https://github.com/Inzimam-Ur/SDGs-and-Crowdfunding-Dataset/tree/main/R%20packages%20NLP%20Results)
+## 9. Data Use and Citation
 
-This folder contains the outputs generated by the NLP packages, including SDGdetector and Text2SDG, along with supporting results and campaign summaries used in the NLP workflow.
-
-## 6. Construction of the Final Analysis Datasets
-
-Following the NLP classification process, the classification results were combined with campaign data containing the dependent variables and control variables required for the econometric analysis.
-
-The dependent variables represented crowdfunding success, including the amount pledged and the number of backers. The explanatory variables captured the relationship between campaign content and the SDGs, including an overall SDG-related indicator and individual SDG variables. Relevant campaign characteristics and other controls were also incorporated into the analysis datasets.
-
-Two final datasets were prepared: one for the main regression analysis and another for robustness checks using an alternative SDG classification method.
-
-**Related folder:** [Final Data Used for Regression Models](https://github.com/Inzimam-Ur/SDGs-and-Crowdfunding-Dataset/tree/main/Final%20Data%20Used%20for%20Regression%20Models)
-
-This folder contains the final datasets prepared for the main regression analysis and robustness checks.
-
-### 6.1 Main Regression Dataset
-
-This dataset combines campaign outcomes, control variables, and SDG classifications obtained using SDGdetector. It was prepared for the primary econometric analysis.
-
-### 6.2 Robustness-Check Dataset
-
-This dataset combines the corresponding campaign outcomes and control variables with the alternative SDG classifications obtained using Text2SDG. It was prepared to assess whether the main findings remain consistent when an alternative NLP-based classification approach is used.
-
-Maintaining these datasets separately allows the main analysis and robustness checks to be distinguished clearly.
-
-## 7. Econometric Analysis
-
-The final datasets were used to examine the relationship between SDG-related campaign content and crowdfunding success.
-
-The main regression analysis considered two outcome variables:
-
-- The logarithm of the amount pledged.
-- The logarithm of the number of backers.
-
-The models incorporated relevant campaign-level controls and year fixed effects, alongside other specified categorical controls. These specifications were designed to examine the association between SDG-related campaign content and funding outcomes while accounting for observed differences across campaigns and years.
-
-The robustness analysis used the alternative SDG classifications generated by Text2SDG to evaluate the consistency of the main findings across classification methods.
-
-**Related folder:** [Final Data Used for Regression Models](https://github.com/Inzimam-Ur/SDGs-and-Crowdfunding-Dataset/tree/main/Final%20Data%20Used%20for%20Regression%20Models)
-
-## 8. Regression Results
-
-The regression results for the main analysis and robustness checks are available in the following PDF.
-
-**[View Regression Results (PDF)](Regression%20Results/Regression%20Results.pdf)**
-
-The PDF contains the regression tables examining the relationship between SDG-related campaign content and crowdfunding success.
-
-## 9. Code, Variable Definitions, and Supporting Documentation
-
-Supporting materials are provided to help readers understand the research workflow, interpret variables, and examine the methods used in the analysis.
-
-**Related folder:** [Codes and Variable Definitions](https://github.com/Inzimam-Ur/SDGs-and-Crowdfunding-Dataset/tree/main/codes%20and%20variables%20decodes)
-
-This folder contains supporting PDF documentation, including NLP package code and country-related reference information.
-
-## 10. Repository Organization
-
-The repository is organized into the following six main folders:
-
-1. [Final Data Used for Regression Models](https://github.com/Inzimam-Ur/SDGs-and-Crowdfunding-Dataset/tree/main/Final%20Data%20Used%20for%20Regression%20Models) — Final datasets for the main regression analysis and robustness checks.
-2. [Overall and Yearly Data After Merging and Cleaning](https://github.com/Inzimam-Ur/SDGs-and-Crowdfunding-Dataset/tree/main/Overall%20and%20Yearly%20Data%20After%20Merging%20and%20Cleaning) — Consolidated annual datasets and other merged and cleaned campaign data.
-3. [R Packages NLP Results](https://github.com/Inzimam-Ur/SDGs-and-Crowdfunding-Dataset/tree/main/R%20packages%20NLP%20Results) — Outputs from SDGdetector and Text2SDG and related NLP materials.
-4. [Regression Results](https://github.com/Inzimam-Ur/SDGs-and-Crowdfunding-Dataset/tree/main/Regression%20Results) — PDF containing the regression tables for the main analysis and robustness checks.
-5. [Sentiment Analysis of the Campaign Description](https://github.com/Inzimam-Ur/SDGs-and-Crowdfunding-Dataset/tree/main/Sentiment%20Analysis%20of%20the%20campaign%20description) — Sentiment analysis data and outputs.
-6. [Codes and Variable Definitions](https://github.com/Inzimam-Ur/SDGs-and-Crowdfunding-Dataset/tree/main/codes%20and%20variables%20decodes) — Supporting code, variable definitions, and documentation.
-
-Together, these materials document the main stages of the research workflow, from data collection and consolidation to text preprocessing, NLP classification, and preparation of the final econometric datasets.
+Users should review the original data provider's terms before redistributing datasets. Please cite the associated study when its publication details become available.
