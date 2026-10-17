@@ -119,15 +119,3 @@ The repository is organized into the following six main folders:
 6. [Codes and Variable Definitions](https://github.com/Inzimam-Ur/SDGs-and-Crowdfunding-Dataset/tree/main/codes%20and%20variables%20decodes) — Supporting code, variable definitions, and documentation.
 
 Together, these materials document the main stages of the research workflow, from data collection and consolidation to text preprocessing, NLP classification, and preparation of the final econometric datasets.
-
-## 11. Reproducibility and Data Use
-
-The repository is intended to support research transparency, documentation, and further academic work on SDGs, crowdfunding, and NLP-based empirical methods.
-
-Researchers seeking to reproduce or extend the analysis should consult the included code and variable documentation. The original data were obtained from Web Robots; users should review the provider's terms and applicable licensing conditions before redistributing the original data or derived datasets.
-
-**Original data source:** [Web Robots – Kickstarter Datasets](https://webrobots.io/kickstarter-datasets/)
-
-## 12. Citation
-
-If these materials are used in academic work, please cite the associated research study when its formal publication details become available.
