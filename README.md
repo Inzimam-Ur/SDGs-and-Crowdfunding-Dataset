@@ -36,14 +36,4 @@ Regression models examine the relationship between SDG-related campaign content 
 
 The PDF contains regression tables for the main analysis and robustness checks.
 
-**Folder:** [Regression Results](https://github.com/Inzimam-Ur/SDGs-and-Crowdfunding-Dataset/tree/main/Regression%20Results) | [View Regression Results (PDF)](Regression%20Results/Regression%20Results.pdf)
-
-## 8. Code and Documentation
-
-Supporting documents provide code-related information, variable definitions, and country reference materials.
-
-**Folder:** [Codes and Variable Definitions](https://github.com/Inzimam-Ur/SDGs-and-Crowdfunding-Dataset/tree/main/codes%20and%20variables%20decodes)
-
-## 9. Data Use and Citation
-
-Users should review the original data provider's terms before redistributing datasets. Please cite the associated study when its publication details become available.
+**Folder:** [Regression Results](https://github.com/Inzimam-Ur/SDGs-and-Crowdfunding-Dataset/tree/main/Regression%20Results) | [View Regression Results (PDF)](Regression%20Results/Regression%20Results.pdf) 
